@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Snippet Bookmark",
+  "description": "Save selected snippets from ChatGPT conversations and find them later.",
+  "version": "0.2.0",
+  "permissions": ["storage", "activeTab", "scripting", "contextMenus", "tabs"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Snippet Bookmarks",
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "save-selection": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Save selected text from current ChatGPT page"
+    }
+  }
+}
